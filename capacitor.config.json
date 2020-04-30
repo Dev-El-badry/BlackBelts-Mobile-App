@@ -4,5 +4,8 @@
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
-  "cordova": {}
+  "cordova": {},
+  "androidStudioPath": "/var/.../studio.sh",
+  "linuxAndroidStudioPath": "/snap/android-studio/current/android-studio/bin/studio.sh"
+
 }

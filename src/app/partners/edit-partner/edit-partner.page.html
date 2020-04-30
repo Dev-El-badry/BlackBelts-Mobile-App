@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Partner</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <form #f="ngForm" (ngSubmit)="submit(f)">
+      <ion-grid>
+        <ion-row>
+          <ion-col size.sm="6" offset.sm="3">
+            <ion-item>
+              <ion-label position="floating">Partner Name</ion-label>
+              <ion-input type="text" name="display_name" #display_name="ngModel" [(ngModel)]="partner.display_name"  autocomplate autocorrect></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!display_name.valid && display_name.touched" lines="none">
+              <ion-text color="danger">
+                Partner Name Field Required
+              </ion-text>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size.sm="6" offset.sm="3">
+            <ion-item>
+              <ion-label position="floating">Partner E-mail</ion-label>
+              <ion-input type="email"  name="email" #email="ngModel" [(ngModel)]="partner.email"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!email.valid && email.touched" lines="none">
+              <ion-text color="danger">
+                Partner E-mail Field Required
+              </ion-text>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-button type="submit" expand="block">
+             
+              Save</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+    </form>
+</ion-content>
